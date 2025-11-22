@@ -1,205 +1,189 @@
-Ten Days of Voice Agents 2025 🚀
-A 10-day challenge by Murf AI to build AI-powered voice agents. Every day features a new agent, persona, or use-case—all powered by Murf Falcon (TTS), Deepgram (STT), Gemini (LLM), and the LiveKit agent framework. Share progress daily on GitHub & LinkedIn!
+🎙️ Ten Days of Voice Agents 2025 🚀
 
-🌟 Challenge Highlights
-Duration: 10 days (one agent per day)
+A 10-day challenge to build real-time conversational AI voice agents!
 
-Goal: Build voice agents with unique skills/personas
+This challenge is powered by:
 
-Share: Document work on GitHub and LinkedIn with:
+Murf Falcon — Text-to-Speech (TTS)
+
+Deepgram — Speech-to-Text (STT)
+
+Gemini — LLM intelligence
+
+LiveKit Agent Framework — Real-time WebRTC pipeline
+
+Document your progress daily on GitHub & LinkedIn using:
 
 #MurfAIVoiceAgentsChallenge
-
 #10DaysofAIVoiceAgents
 
-Community: Join the LiveKit Slack & Murf AI community for help
-
+🌟 Challenge Highlights
+Item	Details
+Duration	10 Days
+Goal	Build one new voice agent each day
+Sharing	GitHub + LinkedIn posts
+Community	LiveKit Slack + Murf AI community
 🏗️ Monorepo Structure
-text
-/backend   # Python (LiveKit agents, Murf, Deepgram, Gemini)
-/frontend  # Next.js (React 19, LiveKit UI, Tailwind CSS)
-/docs      # Challenge documentation & guides
+/backend     # Python: LiveKit agents, Murf, Deepgram, Gemini
+/frontend    # Next.js: UI, WebRTC, LiveKit components
+/docs        # Documentation and daily logs
+
 🔥 Technology Stack
 Component	Technology	Purpose
-Backend	Python 3.9+, LiveKit, Deepgram, Gemini, Murf, Silero VAD	Voice AI pipeline, STT, LLM, TTS
-Frontend	React 19, Next.js 15, Tailwind, Radix, LiveKit Components	UI/UX, real-time interaction, WebRTC
-Infrastructure	LiveKit Server, Docker, JWT	Media server, deployment, authentication
-🛠 Prerequisites & Skills Needed
-Backend
-Python 3.9+
+Backend	Python 3.9+, LiveKit Agents, Deepgram, Gemini, Murf, Silero VAD	Voice pipeline, STT, LLM, TTS
+Frontend	React 19, Next.js 15, Tailwind CSS, Radix UI, LiveKit	Real-time UI
+Infra	LiveKit Server, Docker, JWT	Media streaming & deployment
+🛠️ Prerequisites
+Backend Skills
 
-Async/await, OOP basics
+✔ Python async / OOP
+✔ REST APIs, JWT
+✔ uv package manager
+✔ Environment variables
 
-Environment variable management
+Frontend Skills
 
-Package managers (uv)
-
-REST APIs/JWT/auth
-
-Frontend
-React 19 (hooks: useState, useEffect, useContext)
-
-TypeScript (types, interfaces)
-
-Next.js routing/app router
-
-TailwindCSS
-
-Real-time concepts (WebRTC, LiveKit)
+✔ React 19, hooks
+✔ TypeScript basics
+✔ TailwindCSS
+✔ Understanding WebRTC
 
 General
-Git/GitHub for versioning
 
-Basic terminal/CLI usage
-
-Docker (optional)
-
-API integration, debugging browser/devtools
+✔ Git + GitHub
+✔ Basic terminal usage
+✔ Docker (optional)
 
 🚦 Quick Start Guide
-1. Install Dependencies
-bash
+1️⃣ Install Dependencies
 # Python 3.9+ with `uv`
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# Node.js 18+ and pnpm
+# Node.js 18+ & pnpm
 npm install -g pnpm
 
-# LiveKit Server (optional for local testing)
-brew install livekit  # on macOS
-# Or download from https://docs.livekit.io/home/self-hosting/local/
-2. Clone & Setup
-bash
+# LiveKit server (optional)
+brew install livekit  # macOS
+
+2️⃣ Clone & Setup
 git clone https://github.com/your-username/ten-days-of-voice-agents-2025.git
 cd ten-days-of-voice-agents-2025
-3. Backend Setup
-bash
+
+3️⃣ Backend Setup
 cd backend
-uv sync  # Install dependencies
+uv sync
 
 cp .env.example .env.local
-# Fill in API keys: LIVEKIT_URL, LIVEKIT_API_KEY, LIVEKIT_API_SECRET, MURF_API_KEY, GOOGLE_API_KEY, DEEPGRAM_API_KEY
+# Add API keys: LIVEKIT, MURF, GOOGLE, DEEPGRAM
 
-uv run python src/agent.py download-files  # Download models (optional)
-4. Frontend Setup
-bash
+uv run python src/agent.py download-files  # Optional
+
+4️⃣ Frontend Setup
 cd ../frontend
 pnpm install
-cp .env.example .env.local  # Copy backend keys here
-5. Run Application
-bash
-# Option A: Use script
+cp .env.example .env.local
+
+5️⃣ Run the App
+Option A — Script
 chmod +x start_app.sh
 ./start_app.sh
 
-# Option B: Run terminals individually
-# Terminal 1: LiveKit server
+Option B — Manual
+# Terminal 1
 livekit-server --dev
 
-# Terminal 2: Backend agent
+# Terminal 2
 cd backend
 uv run python src/agent.py dev
 
-# Terminal 3: Frontend
+# Terminal 3
 cd frontend
 pnpm dev
-6. Test System
-Open http://localhost:3000
 
-Allow microphone access
+6️⃣ Test the System
 
-Click Connect, talk to your agent!
+Go to http://localhost:3000
+
+Allow microphone access 🎤
+
+Click Connect
+
+Talk to your agent 🤖 → 🔊
 
 💡 Voice AI Pipeline
-User speaks → Deepgram STT → Gemini LLM → Murf Falcon TTS → User hears
+User → Deepgram STT → Gemini LLM → Murf TTS → Audio Response
 
-VAD (Silero) detects speech
 
-Turn detector manages conversation flow
+✨ Silero VAD detects speech
+✨ Turn management ensures natural conversation timing
 
-📂 Key Files
-text
-backend/
-  ├── src/agent.py     # Main agent logic
-  ├── .env.local       # Your API keys
-  ├── pyproject.toml   # Python dependencies
-  └── tests/           # Pytest test files
-
-frontend/
-  ├── app/             # Next.js app folder
-  ├── components/      # React components
-  ├── hooks/           # Custom hooks
-  ├── package.json     # JS dependencies
-  └── .env.local       # API keys
+📂 Important Project Files
+Path	Description
+backend/src/agent.py	Main agent logic
+.env.local	API configuration
+frontend/app/	UI pages
+frontend/components/	Shared UI elements
+docs/	Daily logs & showcases
 🎨 Customization
-Change agent persona in backend/src/agent.py
 
-Add new tools/functions via function_tool
+You can modify:
 
-Change Murf voice/model in agent code
+Agent persona → backend/src/agent.py
 
-Tweak UI or pipeline for features
+Murf voice model
 
-📝 Daily Progress Example
-🚀 Day 9 of #30DaysOfVoiceAgents – Talking with the LLM in My Own Voice! 🎙️🤖
-Today I built something magical — my AI now listens to me… and speaks back instantly in Murf’s stunning voice! ✨
-Here’s the magic flow:
+UI layout & styles
 
-🎤 Record voice in browser
+Add tools via function_tool
 
-📡 Send audio to backend
+📝 Example Daily Post Template
 
-✍️ AssemblyAI converts to text
+🚀 Day 5 of #10DaysofAIVoiceAgents — My Agent Speaks Like a Pro!
 
-🧠 Gemini LLM generates replies
+🎤 I built instant STT → Gemini → Murf TTS response
+🎧 Smooth voice playback
+🔍 On-screen transcripts
 
-🎙️ Murf.ai gives reply a lifelike voice
+Next: Real-time latency tuning!
 
-🔊 Playback is instant
+#MurfAI #VoiceAI #LiveKit #Gemini #BuildInPublic
 
-📝 Show LLM transcript
-
-💡 Real conversations, instant response, seamless UI.
-
-🔹 Tackled Murf’s 3000‑character limit, smooth UI, audio+transcript sync.
-
-🙏 Huge thanks to Murf AI, Google, and the team! Next: Reduce latency for near real‑time conversations.
-
-#AI #VoiceAI #GenerativeAI #WebDev #TTS #LLM #AssemblyAI #GoogleGemini #BuildwithMurf #DaysofVoiceAgents #MurfAI #BuildInPublic #LearningInPublic
+You can use this format daily with demos/gifs!
 
 🙌 Acknowledgments
-Thanks to Omkar and Srishti for voice contributions!
 
-Murf AI (Falcon TTS), LiveKit, Deepgram, Google Gemini—powering this challenge.
+Special thanks to:
 
-Community, mentors, LinkedIn friends—helpful throughout!
+Murf AI — Falcon TTS
 
-🤔 Getting Help
-Check terminal logs, API key config
+Deepgram — Fast STT
 
-Read LiveKit/Murf docs
+Google Gemini — Smart responses
 
-Ask on LiveKit Slack: https://livekit.io/join-slack
+LiveKit — Real-time voice infra
 
-Common issues: Permissions, API authentication, service status
+Community support from LinkedIn, Slack, and mentors 💛
+
+🤔 Troubleshooting Tips
+
+Check API keys
+
+Validate microphone & browser permissions
+
+Verify LiveKit server status
+
+Check backend logs
 
 🎯 Success Checklist
- Python 3.9+ installed
+Status	Task
+⬜ Python 3.9+ installed	
+⬜ Node 18+ installed	
+⬜ Backend setup complete	
+⬜ Frontend running	
+⬜ LiveKit server running	
+⬜ STT ↔ LLM ↔ TTS loop working	
+⬜ Daily progress shared	
+🚀 Let’s Build the Future of Voice AI!
 
- Node.js 18+ installed
-
- All dependencies set up (uv, pnpm)
-
- API keys (Murf, Google, Deepgram, LiveKit)
-
- Monorepo cloned & configured
-
- Backend/frontend working
-
- LiveKit server running
-
- Successful voice interaction
-
- Progress and demo shared!
-
-Ready to build and share voice agents for the future of conversational AI! Start with Day 1 and keep shipping every day 🚀
+Start Day 1 today — keep shipping every day!
+Real-time voice is the next frontier 🌟
